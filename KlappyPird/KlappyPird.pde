@@ -45,9 +45,9 @@ void draw() {
   fill(0);
   text(puntaje,width - 40 ,35);
   textSize(24);
-  text("1°: " + mayor_puntaje[0],width - 55,height - 68);
-  text("2°: " + mayor_puntaje[1],width - 55,height - 44);
-  text("3°: " + mayor_puntaje[2],width - 55,height - 20);
+  text("1°: " + mayor_puntaje[0],width - 80,height - 68);
+  text("2°: " + mayor_puntaje[1],width - 80,height - 44);
+  text("3°: " + mayor_puntaje[2],width - 80,height - 20);
   refreshColummns();
   level();
   hitbox();
