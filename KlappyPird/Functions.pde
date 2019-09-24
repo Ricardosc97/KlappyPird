@@ -13,6 +13,7 @@ void inicio(){
     altura[i] = int(random(techo,height - 70));
   }
   puntaje = 0;
+  velocidad = 2;
 }
 void converter(int medida){
   if (medida > 80 ){
@@ -22,6 +23,17 @@ void converter(int medida){
   } else{
     distancia = (390-(medida-5)*6);    
   }
+}
+void level (){
+  if (puntaje == 5){
+     velocidad = 3;
+  } 
+  if (puntaje == 10){
+     velocidad = 4;
+  } 
+  if (puntaje == 15){
+     velocidad = 5;
+  } 
 }
 
 void refreshColummns(){
@@ -53,15 +65,18 @@ void hitbox(){
   }
   if(colision){
     image(img, 15, distancia, 40, 40);
-   // text("GAME OVER",width/2-60,height/2-20);
-    inicio();
-    mayor_puntaje[0] = puntaje; 
     colision = false;
-    for (int y = 0; y < 3; y++){
-    if(mayor_puntaje[y] < puntaje){
-      mayor_puntaje[y] = puntaje;
+    if (puntaje > mayor_puntaje[0] && puntaje > mayor_puntaje[1] && puntaje > mayor_puntaje[2]  ) {
+      mayor_puntaje[2] = mayor_puntaje[1]; 
+      mayor_puntaje[1] = mayor_puntaje[0]; 
+      mayor_puntaje[0] = puntaje;  
+    } else if(puntaje > mayor_puntaje[1] && puntaje > mayor_puntaje[2] ) {
+      mayor_puntaje[2] = mayor_puntaje[1]; 
+      mayor_puntaje[1] = puntaje;   
+    }else if (puntaje > mayor_puntaje[2] ) {
+      mayor_puntaje[2] = puntaje;
     }
-   }
+    inicio();
   }
 //if (puntaje>5){
 //hueco = 25;
