@@ -26,5 +26,5 @@ void loop() {
   Serial.print("cm");
   Serial.println();*/
   Serial.write(distancia);
-  delay(50);          //Hacemos una pausa de 100ms
+  delay(50);          //Hacemos una pausa de 50ms
 }

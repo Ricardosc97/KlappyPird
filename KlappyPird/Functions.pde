@@ -33,7 +33,22 @@ void level (){
   } 
   if (puntaje == 15){
      velocidad = 5;
-  } 
+  }
+  if (puntaje == 20){
+     velocidad = 6;
+  }
+  if (puntaje == 25){
+     velocidad = 7;
+  }
+  if (puntaje == 30){
+     velocidad = 8;
+  }
+  if (puntaje == 35){
+     velocidad = 9;
+  }
+  if (puntaje == 45){
+     velocidad = 10;
+  }
 }
 
 void refreshColummns(){
@@ -66,7 +81,9 @@ void hitbox(){
   if(colision){
     image(img, 15, distancia, 40, 40);
     colision = false;
-    if (puntaje > mayor_puntaje[0] && puntaje > mayor_puntaje[1] && puntaje > mayor_puntaje[2]  ) {
+    last_record = puntaje;
+    
+    /*if (puntaje > mayor_puntaje[0] && puntaje > mayor_puntaje[1] && puntaje > mayor_puntaje[2]  ) {
       mayor_puntaje[2] = mayor_puntaje[1]; 
       mayor_puntaje[1] = mayor_puntaje[0]; 
       mayor_puntaje[0] = puntaje;  
@@ -75,7 +92,7 @@ void hitbox(){
       mayor_puntaje[1] = puntaje;   
     }else if (puntaje > mayor_puntaje[2] ) {
       mayor_puntaje[2] = puntaje;
-    }
+    }*/
     inicio();
   }
 //if (puntaje>5){
