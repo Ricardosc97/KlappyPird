@@ -35,7 +35,8 @@ void draw() {
   //distancia = port.read();
   //rect (13, distancia-2, 44,44);      //HitBox
   //distancia = mouseY;
-  image(img, 15, distancia, 40, 40);
+  image(img, 15, distancia, 40, 40);0
+  
   fill (250);
   for (int i = 0; i < 3; i++){
      columna(x[i] ,altura[i]);
